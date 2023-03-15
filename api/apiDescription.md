@@ -17,9 +17,9 @@ You'll get a response like this:
 ```
 
 
-### Registration
+## Registration
 
-Register new useer. If login already exist return -1.
+Register new user. If login already exist return in all fields -1.
 
 #request:
 /register?
@@ -49,7 +49,7 @@ Register new useer. If login already exist return -1.
 ```
 
 
-### `takeBook(String name, String author)` 
+## takeBook(String name, String author)
 
 Returns the id book and change status in Book objekt. If book not found (or all in use) return -1. Return -2 if you banned.
 
@@ -71,6 +71,74 @@ Returns the id book and change status in Book objekt. If book not found (or all 
     "response":
     {
         "id": 1
+    }
+}
+```
+
+## returnBook(book.id)
+
+Returns the boolean true.
+#request:
+/handler?
+
+```json
+{
+    "access_token": "THERE IS A TOKEN. A LONG TOKEN ACTUALLY",
+    "fname": "returnBook",
+    "booId": "book.id"
+}
+```
+
+#response:
+```json
+{
+    "response":
+    {
+        "succes": true
+    }
+}
+```
+
+## getListOfBooks(user.id)
+
+returns a list of books from the user
+#request:
+/handler?
+
+```json
+{
+    "access_token": "THERE IS A TOKEN. A LONG TOKEN ACTUALLY",
+    "fname": "getListOfBooks",
+    "id": "user.id"
+}
+```
+
+#response:
+```json
+{
+    "response":
+    {
+        "book.id": {
+            "name": book.name,
+            "author": book.author,
+            "yearWrite": same,
+            "pagesTotal": same,
+            "quality": same,
+            "publisher": same,
+            "annotation": same,
+            "content": same
+        },
+            ...
+        "book.id": {
+            "name": book.name,
+            "author": book.author,
+            "yearWrite": same,
+            "pagesTotal": same,
+            "quality": same,
+            "publisher": same,
+            "annotation": same,
+            "content": same
+        }
     }
 }
 ```
