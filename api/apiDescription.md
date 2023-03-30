@@ -48,10 +48,62 @@ Register new user. If login already exist return in all fields -1.
 }
 ```
 
+## EditPerson 
+
+Edit some field on user object. Can do user (for self) or admin (for all)
+
+#request:
+/handler?
+
+```json
+{
+    "access_token": "THERE IS A TOKEN. A LONG TOKEN ACTUALLY",
+    "login": "login",
+    "password": "goodPassword",
+    "name": "name",
+    "surname": "surname",
+    "patronymic": "patronymic"
+}
+```
+
+#response:
+```json
+{
+    "response":
+    {
+        "succes": true
+    }
+}
+
+
+## DeletePerson 
+
+Remove from dataBase
+
+#request:
+/handler?
+
+```json
+{
+    "access_token": "THERE IS A TOKEN. A LONG TOKEN ACTUALLY",
+    "login": "login",
+    "id": "id"
+}
+```
+
+#response:
+```json
+{
+    "response":
+    {
+        "succes": true
+    }
+}
+
 
 ## takeBook(String name, String author)
 
-Returns the id book and change status in Book objekt. If book not found (or all in use) return -1. Return -2 if you banned.
+Returns the id book and change status in Book objekt. If book not found (or all in use) return -1. 
 
 #request:
 /handler?
@@ -77,7 +129,7 @@ Returns the id book and change status in Book objekt. If book not found (or all 
 
 ## returnBook(book.id)
 
-Returns the boolean true.
+Returns the boolean true. Can do only admin.
 #request:
 /handler?
 
@@ -101,7 +153,7 @@ Returns the boolean true.
 
 ## getListOfBooks(user.id)
 
-returns a list of books from the user
+returns a list of books from the user.
 #request:
 /handler?
 
