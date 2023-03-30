@@ -74,7 +74,7 @@ Edit some field on user object. Can do user (for self) or admin (for all)
         "succes": true
     }
 }
-
+```
 
 ## DeletePerson 
 
@@ -99,7 +99,7 @@ Remove from dataBase
         "succes": true
     }
 }
-
+```
 
 ## takeBook(String name, String author)
 
@@ -130,6 +130,7 @@ Returns the id book and change status in Book objekt. If book not found (or all 
 ## returnBook(book.id)
 
 Returns the boolean true. Can do only admin.
+
 #request:
 /handler?
 
@@ -154,6 +155,7 @@ Returns the boolean true. Can do only admin.
 ## getListOfBooks(user.id)
 
 returns a list of books from the user.
+
 #request:
 /handler?
 
@@ -171,25 +173,18 @@ returns a list of books from the user.
     "response":
     {
         "book.id": {
-            "name": book.name,
-            "author": book.author,
-            "yearWrite": same,
-            "pagesTotal": same,
-            "quality": same,
-            "publisher": same,
-            "annotation": same,
-            "content": same
+            "name": "book.name",
+            "author": "book.author",
+            "yearWrite": "book.year",
+            "quality": "book.quality",
+            "media": "book.media"
         },
-            ...
         "book.id": {
-            "name": book.name,
-            "author": book.author,
-            "yearWrite": same,
-            "pagesTotal": same,
-            "quality": same,
-            "publisher": same,
-            "annotation": same,
-            "content": same
+            "name": "book.name",
+            "author": "book.author",
+            "yearWrite": "book.year",
+            "quality": "book.quality",
+            "media": "book.media"
         }
     }
 }
